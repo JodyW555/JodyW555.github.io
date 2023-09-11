@@ -1,0 +1,222 @@
+/** @format */
+
+.navbar {
+	background-color: aquamarine;
+	background: linear-gradient(0deg, #39ca7a, palegreen) no-repeat;
+	width: 100%;
+}
+
+h1 {
+	font-size: larger;
+}
+
+h2 {
+	font-size: large;
+}
+
+h3 {
+	font-size: medium;
+	font-weight: bold;
+	font-style: italic;
+}
+
+#intro {
+	background-image: url(../images/javascript-code.jpg);
+	background-repeat: none;
+	background-size: cover;
+	background-position: center;
+	color: white;
+	z-index: -1;
+}
+
+/* Last attempt to blur background image - not sure how successful it was*/
+#bg-image:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: inherit;
+	z-index: -1;
+
+	filter: blur(10px);
+	-moz-filter: blur(10px);
+	-webkit-filter: blur(10px);
+	-o-filter: blur(10px);
+
+	transition: all 2s linear;
+	-moz-transition: all 2s linear;
+	-webkit-transition: all 2s linear;
+	-o-transition: all 2s linear;
+}
+
+#introcol {
+	background-color: rgba(0, 0, 0, 0.5);
+	border: 2px solid #aaaaaa;
+	z-index: 2;
+}
+
+#bio {
+	background-color: gold;
+}
+
+#webtech {
+	background-color: lightsalmon;
+}
+
+#competencies {
+	background-color: lightgreen;
+}
+
+#authenticity {
+	background-color: orange;
+}
+
+#authenticity .p {
+	font-size: xx-small;
+}
+
+.active {
+	background-color: gold;
+}
+
+.button .show {
+	background: gold;
+}
+
+.flip-box {
+	background-color: transparent;
+	width: 100%;
+	height: 300px;
+	perspective: 1000px;
+}
+
+.flip-box-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+	transform: rotateY(180deg);
+}
+
+.flip-box-front,
+.flip-box-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+#competencies .flip-box-front {
+	background-color: lightskyblue;
+	color: black;
+	text-align: center;
+}
+
+#competencies .flip-box-back {
+	background-color: lightseagreen;
+	color: white;
+	transform: rotateY(180deg);
+}
+
+#research .flip-box-front {
+	background-color: peachpuff;
+	border-color: goldenrod;
+	color: black;
+	text-align: center;
+}
+
+/* Overflow: auto gets the scroll bar if text exceeds bounds*/
+#research .flip-box-back {
+	background-color: palegoldenrod;
+	border-color: goldenrod;
+	color: black;
+	transform: rotateY(180deg);
+	overflow: auto;
+}
+
+/*Had a lot of trouble getting images to fit flipcards in 'Research' section.
+This didn't really work.  I ended up changing image sizes.
+Still not entirely sure how responsive it is.*/
+#research .img {
+	object-fit: cover;
+	margin: auto;
+	height: 20%;
+}
+
+/* This didn't seem to do anything, background still white, inline CSS didn't work either.*/
+.form {
+	background-color: grey;
+}
+
+#xmlcard {
+	background-color: lightgrey;
+}
+
+/*I also set up scroll bars on any 'card-text', which covers the XML cards for one.
+Made it fairly generic so any cards will get scroll bars if needed*/
+.card-text {
+	overflow: auto;
+}
+
+/*These ones are for the grid of products*/
+.item-style {
+	background-color: #fff380;
+	margin: 16px;
+	width: 30%;
+	display: inline-block;
+}
+
+.item-title-style {
+	text-align: center;
+}
+
+.item-description-style {
+	text-align: center;
+}
+
+.item-price-style {
+	text-align: center;
+}
+
+.item-image-style {
+	height: 120px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 16px;
+}
+
+/*THese lines are for demo 4 - leaving a comment on a product*/
+/*-----------*/
+.mock-product {
+	width: 300px;
+	min-height: 200px;
+	border: 2px black solid;
+}
+
+/*------------*/
+#comment-list p {
+	margin: 5px;
+	padding: 10px;
+	border: 1px gray solid;
+	box-shadow: 2px 3px darkgray;
+}
+
+#item-list {
+	margin-left: 30px;
+}
+
+/*This gets me my footer with gradient, something that was a bit tricky.
+Bootstrap background gradient using Bootstrap special green seemingly did nothing*/
+footer {
+	background-color: aquamarine;
+	background: linear-gradient(0deg, #39ca7a, palegreen) no-repeat;
+	margin-top: 2px;
+	padding-top: 10px;
+	width: 100%;
+}

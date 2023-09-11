@@ -1,0 +1,255 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta author="Jody Wintringham" copyright="2023" />
+	<title>Javascript page</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+	<link href="css/mystyles.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+	<!--Navigation Bar-->
+	<nav class="navbar navbar-expand-lg p-2 text-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">
+				<img src="images/global.png" class="d-inline-block align-text-top pe-2" width="40"
+					alt="Globe logo" />ITWD6.408
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="formspage.html">Forms</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="xmlrsspage.html">XML/RSS</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="jspage.html">Javascript</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="researchpage.html">Research</a>
+					</li>
+				</ul>
+				<!--Shopping cart buttons-->
+				<div class="col">
+					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#cart">Cart (<span
+							class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear
+						Cart</button>
+				</div>
+			</div>
+			<form class="d-flex" role="search">
+				<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+				<button class="btn btn-outline-success" type="submit">Search</button>
+			</form>
+		</div>
+		</div>
+	</nav>
+
+	<!--ROW 1-->
+	<div id="page_content" class="row">
+		<!--Column 1 for buttons-->
+		<div class="col-12 col-md-2">
+			<div class="row">
+				<!--Button 1-->
+				<button class="col-6 col-md-12 btn btn-outline-dark collapsed mt-1 mb-1" type="button"
+					data-bs-toggle="collapse" data-bs-target="#multiCollapse1" aria-expanded="true"
+					aria-controls="multiCollapse1">
+					<h2>Demo 1</h2>
+				</button>
+				<!--Button 2-->
+				<button class="col-6 col-md-12 btn btn-outline-dark collapsed mt-1 mb-1" type="button"
+					data-bs-toggle="collapse" data-bs-target="#multiCollapse2" aria-expanded="false"
+					aria-controls="multiCollapse2">
+					<h2>Demo 2</h2>
+				</button>
+				<!--Button 3-->
+				<button class="col-6 col-md-12 btn btn-outline-dark collapsed mt-1 mb-1" type="button"
+					data-bs-toggle="collapse" data-bs-target="#multiCollapse3" aria-expanded="false"
+					aria-controls="multiCollapse3">
+					<h2>Demo 3</h2>
+				</button>
+				<!--Button 4-->
+				<button class="col-6 col-md-12 btn btn-outline-dark collapsed mt-1 mb-1" type="button"
+					data-bs-toggle="collapse" data-bs-target="#multiCollapse4" aria-expanded="false"
+					aria-controls="multiCollapse4">
+					<h2>Demo 4</h2>
+				</button>
+			</div>
+		</div>
+
+		<!--Column 2 for content-->
+		<div class="col-12 col-md-10 z-1">
+			<div class="row">
+				<div class="col-12">
+					<div class="multi-collapse .collapse.show" id="multiCollapse1">
+						<div class="card card-body">
+							<!--Demo 1 - Slideshows-->
+							<h1 class="bg-info">Demo 1: Product Slideshows</h1>
+							<section class="container">
+								<h2>Manual Slideshow</h2>
+								<h4 id="manual-slide-title">Apple iPhone 13 mini</h4>
+								<img id="manual-slide-image" src="products/product_0.jpg" height="300px" />
+								<br />
+								<button onclick="previousSlide()">PREVIOUS</button>
+								<button onclick="nextSlide()">NEXT</button>
+							</section>
+
+							<section class="container">
+								<h2>Automatic Slideshow</h2>
+								<h4 id="auto-slide-title">Apple iPhone 13 mini</h4>
+								<img id="auto-slide-image" src="products/product_0.jpg" height="300px" />
+							</section>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12">
+					<div class="multi-collapse collapse" id="multiCollapse2">
+						<div class="card card-body">
+							<!--Online shop - Grid of products-->
+							<!--Shopping Cart seemed too complex - couldn't work it out in time-->
+							<!---My child needs to go to hospital now-->
+							<h1 class="bg-info">Demo 2: Product Grid and Drop down</h1>
+							<h2>NOTE: NOT a real shop - please don't try to purchase anything!</h2>
+							<div>
+								<div id="product-list"></div>
+							</div>
+							<div>
+								<label>Select Product: </label>
+								<select id="my-productList" onchange="displayMyProduct()">
+								</select>
+								<br>
+							</div>
+							<section class="container">
+								<h4 id="my-productTitle">Apple iPhone 13 mini</h4>
+								<img id="my-productImageURL" src="products/product_0.jpg" height="300px">
+								<p id="my-productPrice">$1,180</p>
+								<p id="my-productDescript">128GB storage, Colour: Midnight</p>
+							</section>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12">
+					<div class="multi-collapse collapse" id="multiCollapse3">
+						<div id="customwebpage" class="card card-body">
+							<h2 class="bg-info">Demo 3: Customise the Webpage</h2>
+							<label>Select Text Size: </label>
+							<select id="text-size" onchange="customiseText()">
+								<option></option>
+								<option value="35px">Larger</option>
+								<option value="25px">Large</option>
+								<option value="16px">Not Large</option>
+							</select>
+
+							<br />
+							<label>Select colour: </label>
+							<select id="colourOption" onchange="changeColour()">
+								<option></option>
+								<option value="tomato">Red</option>
+								<option value="greenyellow">Green</option>
+								<option value="yellow">Yellow</option>
+								<option value="ivory">Ivory</option>
+								<option value="pink">Pink</option>
+								<option value="rebeccapurple">Purple</option>
+							</select>
+							<br /><br />
+							<h2>12 Angry Men</h2>
+							<img src="movies/movie3.jpg" alt="Image" width="300px" />
+							<p id="angrymentext">
+								This is presumably a film about a dozen irate males, although I have never actually
+								watched it so that is an assumption.<br />
+								"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
+								adipisci velit..."<br />
+								"There is no one who loves pain itself, who seeks after it and wants to have it,
+								simply because it is pain..."
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12">
+					<div class="multi-collapse collapse" id="multiCollapse4">
+						<div class="card card-body">
+							<h2 class="bg-info">Demo 4: Vote on product and comment below a product</h2>
+							<div class="mock-product">
+								<h2 style="text-align: center">Apple iPhone 12</h2>
+								<img src="products/product_2.jpg" alt="Product Image" width="100%">
+								</p style="text-align: center">Product description: <br>
+								64GB storage, Colour: Purple, SIM: Single</p>
+								<br>
+							</div>
+							<section id="comments-section">
+								<h4>Comments: </h4>
+								<div id="comment-list"></div>
+								<h4>Add your comment: </h4>
+								<label>Name: </label>
+								<input type="text" id="comment_name" placeholder="your name" size="90">
+								<br>
+								<label>Comment: </label><br>
+								<textarea id="comment_text" cols="100" rows="10"></textarea>
+								<br>
+								<button onclick="addComment()">POST</button>
+								<br>
+							</section>
+							<br>
+							<section id="likehatebuttons">
+								<button id="likeButton" onclick="like()">&#128077;</button>
+								<p id="likeNumber" style="display: inline-block;">0</p>
+								<button id="dislikeButton" onclick="dislike()">&#128078;</button>
+								<p id="dislikeNumber" style="display: inline-block;">0</p>
+							</section>
+						</div>
+					</div>
+				</div>
+				<p>
+					Product images used for educational use only - from
+					<a href="https://www.pbtech.co.nz/category/phones-gps"> PBtech.co.nz Phones and accessories</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+<!--This is my responsive footer-->
+<footer>
+	<div class="row">
+		<!--Social media links-->
+		<div class="col col-lg-4 col-md-12 text-start ps-5">
+			<a href="https://www.linkedin.com/in/jody-wintringham-010544257"><img src="images/linkedin-icon.png" /></a>
+			<a href="https://www.facebook.com"><img src="images/facebook-icon.png" /></a>
+			<a href="https://www.instagram.com"><img src="images/instagram-icon.png" /></a>
+			<a href="https://www.twitter.com"><img src="images/twitter-x-icon.png" /></a>
+			<a href="https://www.youtube.com"><img src="images/youtube-icon.png" /></a>
+		</div>
+		<div class="col col-lg-4 col-md-6 text-center">
+			<p>&copy; Jody Wintringham 2023</p>
+		</div>
+		<div class="col col-lg-4 col-md-6 text-end pe-5">
+			<a target="_blank" href="researchpage.html#privacypolicy">Privacy Policy</a>
+		</div>
+	</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+	integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+	crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+	integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+	crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/myjsinteractive.js"></script>
+
+</html>
