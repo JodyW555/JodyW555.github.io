@@ -5,3 +5,4 @@ As of July 2025 I have completed my BCS degree and graduated.
 
 ## Level 6 Website
 This website was created for my Level 6 web design class for the BCS degree at EIT New Zealand.
+It was coded from scratch by myself under the guidance of my lecturers.
